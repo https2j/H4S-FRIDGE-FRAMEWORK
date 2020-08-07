@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="fridge.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+  <div id="header">
+      <div id="smallheader">
+        Team ATE
+      </div>
+      <div id="largeheader">
+        Your Fridge
+      </div>
+    </div>
+    <div class="column" style="background-color:#edeefc;">
+      <p id="col"></p>
+  </div>
+<div class="nav">
+      <div class="container">
+        <ul>
+          <li><a style="text-decoration: none"><a href="index.html">Home</a></li>
+          <li><a style="text-decoration: none"><a href="add.html">Add/Remove Items</a></li>
+          <li><a style="text-decoration: none"><a href="shopping.html">Shopping List</a></li>
+          <li><a style="text-decoration: none"><a href="calendar.html">Calendar</a></li>
+          <li><a style="text-decoration: none"><a href="factsheet.html">Factsheet</a></li>
+        </ul>
+      </div>
+    </div>
+  <div id="footer">
+      <input type="text" id="item" placeholder="Enter item">
+      <button class="button" onclick="add_item()">Add Item</button>
+      <input type="date" id="expiry_date">
+      <button class="button" onclick="add_exp_dates()">Add expiry date</button>
+      <input type="text" id="remove" placeholder="Enter item to remove">
+      <button class="button" onclick="remove_item()">Remove</button>
+      <button id="exp_button">Items Expiring!</button>
+    <div id="exp_modal" class="modal">
+      <div class="modal-content">
+          <span class="close">&times;</span>
+          <p id="exp_items">No items expiring soon :)</p>
+        </div>
+      </div>
+    </div>
+    <script>
+    var modal = document.getElementById("exp_modal");
+    var btn = document.getElementById("exp_button");
+    var span = document.getElementsByClassName("close")[0];
+    btn.onclick = function() {
+      modal.style.display = "block";
+    }
+    span.onclick = function() {
+      modal.style.display = "none";
+    }
+    window.onclick = function(event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+  </body>
+</html>
